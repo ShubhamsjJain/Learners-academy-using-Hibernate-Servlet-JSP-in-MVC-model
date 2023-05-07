@@ -5,6 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Student Form</title>
+<link  type="text/css" rel="stylesheet" href="css/style.css">
+<link  type="text/css" rel="stylesheet" href="css/add-student-style.css">
 </head>
 <body>
 
