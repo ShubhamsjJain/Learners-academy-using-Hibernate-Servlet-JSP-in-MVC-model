@@ -1,5 +1,7 @@
 package com.simplilearn.project;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -17,7 +19,7 @@ public class StudentDAO {
 
 	public void addStudent(String name, String e_mail, String place, String classinput) {
 		
-		Session session = factory.getCurrentSession();
+		Session session = factory.openSession();
 		Transaction transaction = null;
 		
 		try {
@@ -63,6 +65,23 @@ public class StudentDAO {
 				transaction.rollback();
 			}
 			e.printStackTrace();
+		}finally {
+			
+			session.close();
+		}
+		
+	}
+
+	public List<Student> getStudents() {
+		
+		Session session = factory.openSession();
+		
+		try {
+			
+		List<Student> list = session.createQuery("from Student").list(); 
+		
+		return list; 
+		
 		}finally {
 			
 			session.close();

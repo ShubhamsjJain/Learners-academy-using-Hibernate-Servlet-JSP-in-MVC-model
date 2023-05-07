@@ -1,11 +1,16 @@
 package com.simplilearn.project;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
 
 
 
@@ -48,7 +53,8 @@ try {
 			
 		        case "LIST":
 					//List the students in MVC fashion
-					
+		        	listStudents(request,response);    //Provided below
+			        break;
 					
 					
 			    case "ADD":
@@ -90,6 +96,24 @@ try {
 			e.printStackTrace();
 		}  
 	}
+
+	private void listStudents(HttpServletRequest request, HttpServletResponse response)throws Exception{
+		
+		       //Get Student class objects in list from studentDAO class
+		
+				List<Student> students = studentdao.getStudents();
+				
+				//Add subjects to the Attribute of request object
+				
+				request.setAttribute("STUDENT_LIST", students);
+				
+				// Send to JSP page (view) using Request dispatcher (Building connection between servlet(controller) and JSP(view))
+				
+				RequestDispatcher dispatcher = request.getRequestDispatcher("list-students.jsp");//where to forward
+				dispatcher.forward(request, response);//what to forward
+		
+	}
+
 
 	private void addStudents(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		

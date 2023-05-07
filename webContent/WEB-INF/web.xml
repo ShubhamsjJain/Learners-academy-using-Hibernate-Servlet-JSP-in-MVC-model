@@ -13,6 +13,16 @@
   </welcome-file-list>
   
   <servlet>
+  <servlet-name>Dashboard_Servlet</servlet-name>
+  <servlet-class>com.simplilearn.project.Dashboard_Servlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Dashboard_Servlet</servlet-name>
+  <url-pattern>/Dashboard</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   <servlet-name>StudentControllerServlet</servlet-name>
   <servlet-class>com.simplilearn.project.StudentControllerServlet</servlet-class>
   </servlet>
