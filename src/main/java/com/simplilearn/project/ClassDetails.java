@@ -28,8 +28,8 @@ public class ClassDetails {
 	@OneToMany(mappedBy = "classdetails", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	private List<Student> stu = new ArrayList<>();
 	
-	@ManyToMany(mappedBy = "classes")
-	private List<Subject> subjects;
+	@ManyToMany(mappedBy = "classes", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Subject> subjects = new ArrayList<>();
 
 	public ClassDetails() {
 		

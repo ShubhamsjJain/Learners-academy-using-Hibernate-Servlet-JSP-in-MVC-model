@@ -31,11 +31,13 @@ List<Subject> theSubjects = (List<Subject>)request.getAttribute("SUBJECT_LIST");
       
          <!-- Adding Add Subjects Button that will take to add-subject-form -->
          
+         
          <input type='button' 
          value='Add Subject' 
-         onclick="window.location.href='add-subject-form.jsp';return false;" 
+         onclick="window.location.href='subjects?command=OPTION';return false;"
          class='add-student-button'
          />
+         
          
          <table width=100%>
          

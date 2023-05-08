@@ -1,9 +1,10 @@
 package com.simplilearn.project;
 
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,13 +25,13 @@ public class Subject {
 	@Column(name="subject_name")
 	private String s_name;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name="classes_subject",
 			joinColumns = @JoinColumn(name="subject_id"),
 			inverseJoinColumns = @JoinColumn(name="class_id")
 			)
-	private List<ClassDetails> classes;
+	private List<ClassDetails> classes = new ArrayList<>();
 
 	public Subject() {
 		
