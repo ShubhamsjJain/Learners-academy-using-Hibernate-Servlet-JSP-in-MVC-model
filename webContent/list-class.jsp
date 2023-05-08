@@ -37,6 +37,7 @@ if(classdetails != null){
            <tr>
            
               <th>Class ID</th>
+              <th>Class Name</th>
               <th>Student List</th>
               <th>Teacher List</th>
               <th>Subjects List</th>
@@ -48,13 +49,14 @@ if(classdetails != null){
                 
                <tr>
                      <td><%= String.valueOf(classdetails.getID())%></td>
+                     <td><%= classdetails.getName() %></td>
                      
-                     <td><ul>
+                     <td>
                      
                      <% if(classdetails.getStu() != null && !classdetails.getStu().isEmpty()){ %>
                      <% for(Student stu: classdetails.getStu()) {%>
                      
-                     <li><%= stu.getName()%></li>
+                     <%= stu.getName()%><br>
                       
                      <% }%>
                      
@@ -66,9 +68,29 @@ if(classdetails != null){
                      
     <% } %>                 
                      
-                     </ul></td>
+                     </td>
                      <td></td>
-                     <td></td>
+                     <td>
+                     
+                     <% if(classdetails.getSubjects() != null && !classdetails.getSubjects().isEmpty()){ %>
+                           
+                             <% for(Subject subject: classdetails.getSubjects()) {%>
+                     
+                                   <%= subject.getS_name()%><br>
+                      
+                             <% }%>
+                     
+                     <% }else{ %>
+                     
+                                None
+                     
+                     <% } %>
+                     
+                    
+                     
+                     
+                     
+                     </td>
              
                
  
