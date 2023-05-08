@@ -77,7 +77,7 @@ public class Dashboard_Servlet extends HttpServlet {
 			
 			//SUBJECTS
 			
-			//out.print("<input type='button' value='View Subjects' onclick=\"window.location.href='subjects';return false;\"/>");
+			out.print("<input type='button' value='View Subjects' onclick=\"window.location.href='subjects?command=LIST';return false;\"/>");
 			out.print("</body></html>");
 		}else {
 			out.print("Wrong ID or Password.Please enter correct values");

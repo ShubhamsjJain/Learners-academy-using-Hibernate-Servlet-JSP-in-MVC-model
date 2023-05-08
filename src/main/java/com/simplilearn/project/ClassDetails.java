@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,17 +27,25 @@ public class ClassDetails {
 	
 	@OneToMany(mappedBy = "classdetails", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	private List<Student> stu = new ArrayList<>();
+	
+	@ManyToMany(mappedBy = "classes")
+	private List<Subject> subjects;
 
 	public ClassDetails() {
 		
 	}
 
-	public ClassDetails(int iD, String name, List<Student> stu) {
-		
+	
+
+	public ClassDetails(int iD, String name, List<Student> stu, List<Subject> subjects) {
+		super();
 		ID = iD;
 		this.name = name;
 		this.stu = stu;
+		this.subjects = subjects;
 	}
+
+
 
 	public int getID() {
 		return ID;
@@ -61,6 +70,20 @@ public class ClassDetails {
 	public void setStu(List<Student> stu) {
 		this.stu = stu;
 	}
+
+
+
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+
+
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
+	
+	
 
 	
 }
