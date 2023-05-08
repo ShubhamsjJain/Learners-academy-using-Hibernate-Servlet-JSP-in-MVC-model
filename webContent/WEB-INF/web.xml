@@ -32,4 +32,15 @@
   <url-pattern>/students</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  <servlet-name>ClassControllerServlet</servlet-name>
+  <servlet-class>com.simplilearn.project.ClassControllerServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>ClassControllerServlet</servlet-name>
+  <url-pattern>/classes</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

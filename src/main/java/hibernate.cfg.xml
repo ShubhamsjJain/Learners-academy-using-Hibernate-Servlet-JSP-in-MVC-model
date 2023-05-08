@@ -12,7 +12,7 @@
     <property name="connection.username">root</property>
     <property name="connection.password">Sj.shubham@123</property>
     <!--  <property name="dialect">org.hibernate.dialect.MYSQL8Dialect</property>-->
-    <property name="hbm2ddl.auto">create</property>   <!-- automatically create table -->
+    <property name="hbm2ddl.auto">update</property>   <!-- automatically create table -->
     <property name="show_sql">true</property>
     <mapping class = "com.simplilearn.project.Student"/>
     <mapping class = "com.simplilearn.project.ClassDetails"/>

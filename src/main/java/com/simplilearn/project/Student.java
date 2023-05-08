@@ -2,6 +2,7 @@ package com.simplilearn.project;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class Student {
 	@Column(name="City")
 	private String city;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)//FetchType Eager to prevent lazy loading exception which occurs generally in bidirectional mapping
 	@JoinColumn(name="class_id")
 	private ClassDetails classdetails;
 
