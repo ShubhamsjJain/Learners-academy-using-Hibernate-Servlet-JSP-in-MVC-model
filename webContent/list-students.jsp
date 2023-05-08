@@ -7,13 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Student List</title>
+<link  type="text/css" rel="stylesheet" href="css/style.css">
 </head>
-<body>
+
 
 <%
-
 //Get the students from the request object (sent by the servlet)
-
 List<Student> theStudents = (List<Student>)request.getAttribute("STUDENT_LIST");
 %>
 <body>
@@ -30,7 +29,13 @@ List<Student> theStudents = (List<Student>)request.getAttribute("STUDENT_LIST");
   
       <div id="content">
       
+         <!-- Adding Add Students Button that will take to add-student-form -->
          
+         <input type='button' 
+         value='Add Student' 
+         onclick="window.location.href='add-student-form.jsp';return false;" 
+         class='add-student-button'
+         />
          
          <table width=100%>
          

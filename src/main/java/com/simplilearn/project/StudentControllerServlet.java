@@ -133,7 +133,7 @@ try {
 				
 				//Send back to list-student page
 				
-				//listStudents(request,response);
+				listStudents(request,response);
 		
 	}
 
