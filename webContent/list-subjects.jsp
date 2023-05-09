@@ -80,9 +80,39 @@ List<Subject> theSubjects = (List<Subject>)request.getAttribute("SUBJECT_LIST");
                      
                      <% } %>
                      
-    <% } %>                 
+                    
                      
                      </ul></td>
+                     
+                     
+                                    <!-- Print Faculties for this Subject -->
+               
+                            
+            		   
+            		           
+                
+                     <td><ul>
+                     
+                     <% if(sub.getT_objects() != null && !sub.getT_objects().isEmpty()){ %>
+                     
+                          <% for(Teacher tea: sub.getT_objects()) {%>
+                     
+                                 <li><%= tea.getName()%></li>
+                      
+                          <% }%>
+                     
+                     <% }else{ %>
+                     
+                         None
+                     
+                     <% } %>
+                     
+           <% } %> 
+                     
+                    
+                     
+                     </ul></td>
+                     
  
               </tr>
            
