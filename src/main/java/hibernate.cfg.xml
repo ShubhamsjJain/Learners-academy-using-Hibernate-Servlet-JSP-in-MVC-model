@@ -17,6 +17,8 @@
     <mapping class = "com.simplilearn.project.Student"/>
     <mapping class = "com.simplilearn.project.ClassDetails"/>
     <mapping class = "com.simplilearn.project.Subject"/>
+    <mapping class = "com.simplilearn.project.Teacher"/>
+    
   
   </session-factory>
 
