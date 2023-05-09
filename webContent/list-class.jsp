@@ -72,11 +72,12 @@ if(classdetails != null){
                      <td></td>
                      <td>
                      
+                       
                      <% if(classdetails.getSubjects() != null && !classdetails.getSubjects().isEmpty()){ %>
                            
                              <% for(Subject subject: classdetails.getSubjects()) {%>
                      
-                                   <%= subject.getS_name()%><br>
+                                   <li><%= subject.getS_name()%></li>
                       
                              <% }%>
                      
@@ -88,6 +89,25 @@ if(classdetails != null){
                      
                     
                      
+                     
+                     
+                     </td>
+                     <td>
+                        
+                        <form action="" method="get">
+                            <h5>Add Teacher for Subject</h5>
+                            <select name="subject">
+           
+                                  <% for(Subject s : classdetails.getSubjects()){%>
+                
+                                       <option  value="<%= s.getS_name()%>"><%= s.getS_name()%></option>
+                
+                                  <% } %>
+                
+                            </select> 
+                            <input type="submit" value="Submit">
+                         
+                         </form>
                      
                      
                      </td>

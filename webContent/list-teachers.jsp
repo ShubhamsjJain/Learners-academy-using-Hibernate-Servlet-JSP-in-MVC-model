@@ -30,7 +30,7 @@ List<Teacher> teachers = (List<Teacher>)request.getAttribute("TEACHER_LIST");
   
       <div id="content">
       
-         <!-- Adding Add Teachers Button that will take to add-subject-form -->
+         <!-- Adding Add Teachers Button that will take to add-teachers-form -->
          
          
          <input type='button' 
@@ -74,7 +74,7 @@ List<Teacher> teachers = (List<Teacher>)request.getAttribute("TEACHER_LIST");
                      
                           <% for(Subject s: tea.getS_objects()) {%>
                      
-                                 <li><%= s.getS_name()%></li>
+                                 <%= s.getS_name()%><br>
                       
                           <% }%>
                      
