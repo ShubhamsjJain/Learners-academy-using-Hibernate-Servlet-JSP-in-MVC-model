@@ -66,7 +66,8 @@ public void addSubject(String subject_name, String[] class_names) {
 		
 		for(String c_name : class_names) {  // i.e we are checking for each classname entered by user one by one 
 			                                //using string array in which we stored all entered class_names
-			
+			                                //though now since i have provided dropdown list of classes and 
+			                                //taking only 1 classname hence no need of either for loop or checking whether class name exists or not 
 			Query query = session.createQuery("from ClassDetails c where c.name = :name");
 			query.setParameter("name",c_name);
 			ClassDetails classdetail = (ClassDetails) query.uniqueResult();

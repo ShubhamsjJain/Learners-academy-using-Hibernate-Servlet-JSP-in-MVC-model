@@ -18,6 +18,7 @@ public class TeacherControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     private TeacherDAO teacherdao;
+    private SubjectDAO subjectdao;
     
     public TeacherControllerServlet() {
         
@@ -28,6 +29,7 @@ public class TeacherControllerServlet extends HttpServlet {
 	public void init() throws ServletException {
 		
 		teacherdao = new TeacherDAO();
+		subjectdao = new SubjectDAO();
 	}
 
 
@@ -51,11 +53,22 @@ try {
 		        	listTeachers(request,response);    //Provided below
 			        break;
 					
+			        
+		        case "OPTION":
+			    	
+				    //Get list of all subject objects to get subject names from that objects 
+		        	//which we will use in option tag in add teacher form
+			    	
+			    	
+			    	subjectObjects(request,response);    //Provided below
+			        break;
 					
 			    case "ADD":
 			
-			        //Add the students in MVC fashion 
+			        //Add the teachers in MVC fashion 
 			    
+			    	addTeachers(request,response);    //Provided below
+			        break;
 			        
 			        
 			    case "LOAD":
@@ -90,6 +103,39 @@ try {
 			e.printStackTrace();
 		}  
 	}
+
+	private void addTeachers(HttpServletRequest request, HttpServletResponse response)throws Exception {
+		
+		//Read teacher info from form data
+		
+		String name = request.getParameter("name");
+		String e_mail = request.getParameter("e_mail");
+		String city = request.getParameter("place");
+		String subject = request.getParameter("subject");
+		
+		//Send this teacher info to TeacherDAO in order to insert it into database
+		
+		teacherdao.addTeacher(name, e_mail, city, subject);
+		
+		
+		//Send back to list-teacher page
+		
+		listTeachers(request,response);
+	}
+
+
+	private void subjectObjects(HttpServletRequest request, HttpServletResponse response)throws Exception {
+		
+		List<Subject> subjects = subjectdao.getSubjects();
+		
+		request.setAttribute("SUBJECT_OPTIONS", subjects);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("add-teacher-form.jsp");
+		
+		dispatcher.forward(request, response);
+		
+	}
+
 
 	private void listTeachers(HttpServletRequest request, HttpServletResponse response)throws Exception {
 		
