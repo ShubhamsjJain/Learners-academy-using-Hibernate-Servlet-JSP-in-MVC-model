@@ -52,6 +52,18 @@
   <url-pattern>/subjects</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  <servlet-name>TeacherControllerServlet</servlet-name>
+  <servlet-class>com.simplilearn.project.TeacherControllerServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>TeacherControllerServlet</servlet-name>
+  <url-pattern>/teachers</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   
   
   

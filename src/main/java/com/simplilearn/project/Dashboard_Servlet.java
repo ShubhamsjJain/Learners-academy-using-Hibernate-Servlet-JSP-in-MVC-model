@@ -67,7 +67,7 @@ public class Dashboard_Servlet extends HttpServlet {
 			
 			//TEACHERS
 			
-			//out.print("<input type='button' value='View Teachers' onclick=\"window.location.href='teachers';return false;\"/>");
+			out.print("<input type='button' value='View Teachers' onclick=\"window.location.href='teachers?command=LIST';return false;\"/>");
 			
 			
 			//CLASSES
