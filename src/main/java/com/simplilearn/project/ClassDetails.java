@@ -40,13 +40,22 @@ public class ClassDetails {
 
 	
 
-	public ClassDetails(int iD, String name, List<Student> stu, List<Subject> subjects) {
+	
+
+
+
+	public ClassDetails(int iD, String name, List<Student> stu, List<Subject> subjects, List<Teacher> teachers) {
 		super();
 		ID = iD;
 		this.name = name;
 		this.stu = stu;
 		this.subjects = subjects;
+		this.teachers = teachers;
 	}
+
+
+
+
 
 
 
@@ -84,6 +93,26 @@ public class ClassDetails {
 
 	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
+	}
+
+
+
+
+
+
+
+	public List<Teacher> getTeachers() {
+		return teachers;
+	}
+
+
+
+
+
+
+
+	public void setTeachers(List<Teacher> teachers) {
+		this.teachers = teachers;
 	}
 	
 	

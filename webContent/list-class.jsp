@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Students list</title>
+<title>Class Report</title>
 <link  type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
@@ -53,23 +53,41 @@ if(classdetails != null){
                      
                      <td>
                      
-                     <% if(classdetails.getStu() != null && !classdetails.getStu().isEmpty()){ %>
-                     <% for(Student stu: classdetails.getStu()) {%>
+                          <% if(classdetails.getStu() != null && !classdetails.getStu().isEmpty()){ %>
+                               <% for(Student stu: classdetails.getStu()) {%>
                      
-                     <%= stu.getName()%><br>
+                                        <%= stu.getName()%><br>
                       
-                     <% }%>
+                                <% }%>
                      
-                     <% }else{ %>
+                          <% }else{ %>
                      
                          None
                      
-                     <% } %>
+                           <% } %>
                      
-    <% } %>                 
+                    
                      
                      </td>
-                     <td></td>
+                     <td>
+                     
+                           <% if(classdetails.getTeachers() != null && !classdetails.getTeachers().isEmpty()){ %>
+                           
+                             <% for(Teacher teacher: classdetails.getTeachers()) {%>
+                     
+                                   <li><%= teacher.getName()%></li>
+                      
+                             <% }%>
+                     
+                     <% }else{ %>
+                     
+                                None
+                     
+                     <% } %>
+                     
+                     
+                     
+                     </td>
                      <td>
                      
                        
@@ -92,6 +110,8 @@ if(classdetails != null){
                      
                      
                      </td>
+                     
+                     
                      <td>
                         
                         <form action="subjects" method="get">
@@ -110,7 +130,7 @@ if(classdetails != null){
                             <input type="submit" value="Submit">
                          
                          </form>
-                     
+    <% } %> 
                      
                      </td>
              

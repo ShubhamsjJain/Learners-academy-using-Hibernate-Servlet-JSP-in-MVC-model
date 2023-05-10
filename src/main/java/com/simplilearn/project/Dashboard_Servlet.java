@@ -70,15 +70,15 @@ public class Dashboard_Servlet extends HttpServlet {
 			out.print("<input type='button' value='View Teachers' onclick=\"window.location.href='teachers?command=LIST';return false;\"/>");
 			
 			
-			//CLASSES
-			
-			out.print("<input type='button' value='View Classes' onclick=\"window.location.href='classes?command=OPTION';return false;\"/>");
-			
 			
 			//SUBJECTS
 			
 			out.print("<input type='button' value='View Subjects' onclick=\"window.location.href='subjects?command=LIST';return false;\"/>");
 			out.print("</body></html>");
+			
+            //CLASSES
+			
+			out.print("<input type='button' value='Class Report' onclick=\"window.location.href='classes?command=OPTION';return false;\"/>");  
 		}else {
 			out.print("Wrong ID or Password.Please enter correct values");
 			response.sendRedirect("index.html");

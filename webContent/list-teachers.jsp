@@ -73,23 +73,53 @@ List<Teacher> teachers = (List<Teacher>)request.getAttribute("TEACHER_LIST");
                      
                      <% if(tea.getS_objects() != null && !tea.getS_objects().isEmpty()){ %>
                      
-                          <% for(Subject s: tea.getS_objects()) {%>
+                                  <% for(Subject s: tea.getS_objects()) {%>
                      
-                                 <%= s.getS_name()%><br>
+                                             <%= s.getS_name()%><br>
                       
-                          <% }%>
+                                   <% }%>
                      
                      <% }else{ %>
                      
-                         None
+                               None
                      
                      <% } %>
                      
-    <% } %>                 
+                  
+                     
+                     </ul></td>
+                     
+                     
+                     <!-- Print Classes assigned to this Teacher -->
+               
+                            
+            		   
+            		           
+                
+                     <td><ul>
+                     
+                     <% if(tea.getClasses() != null && !tea.getClasses().isEmpty()){ %>
+                     
+                                  <% for(ClassDetails c: tea.getClasses()) {%>
+                     
+                                             <%= c.getName()%><br>
+                      
+                                   <% }%>
+                     
+                     <% }else{ %>
+                     
+                               None
+                     
+                     <% } %>
+                     
+                  
                      
                      </ul></td>
  
+ 
               </tr>
+              
+      <% } %>  
            
           
            
