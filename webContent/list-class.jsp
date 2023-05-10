@@ -94,7 +94,9 @@ if(classdetails != null){
                      </td>
                      <td>
                         
-                        <form action="" method="get">
+                        <form action="subjects" method="get">
+                        
+                            <input type="hidden" name="command" value="GETSUBJECTOBJECT"/>
                             <h5>Add Teacher for Subject</h5>
                             <select name="subject">
            

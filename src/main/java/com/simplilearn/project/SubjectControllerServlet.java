@@ -56,7 +56,14 @@ try {
 		    	
 		    	classNames(request,response);    //Provided below
 		        break;
+		        
+			    case "GETSUBJECTOBJECT":
+			    	
+					//Get object of subject using subject name as parameter in MVC fashion
+		        	getObjectOfSubject(request,response);    //Provided below
+			        break;
 				
+		        
 			
 		        case "LIST":
 					//List the subjects in MVC fashion
@@ -107,6 +114,22 @@ try {
 	}
 
 	
+	private void getObjectOfSubject(HttpServletRequest request, HttpServletResponse response)throws Exception {
+		
+		String subject = request.getParameter("subject");
+		
+		Subject object = subjectdao.getSubjectObject(subject);
+		
+		request.setAttribute("SUBJECT_OBJECT", object);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("add-teacher-in-class.jsp");
+		
+		dispatcher.forward(request, response);
+		
+		
+		
+	}
+
 	private void addSubjects(HttpServletRequest request, HttpServletResponse response)throws Exception {
 		
 		//Read subject info from form data
