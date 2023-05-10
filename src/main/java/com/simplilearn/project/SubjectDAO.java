@@ -115,6 +115,28 @@ public void addSubject(String subject_name, String[] class_names) {
 	}
 	
 }
+
+public Subject getSubjectObject(String subject)throws Exception {
+	
+Session session = factory.openSession();
+	
+	try {
+		
+		//No need to check whether subject with that subject name exist or not 
+		//because I have taken that subject name from drop down list
+		
+	Query q = session.createQuery("from Subject s where s.s_name = :name"); 
+	q.setParameter("name", subject);
+	Subject s_object = (Subject) q.uniqueResult();
+	
+	return s_object; 
+	
+	}finally {
+		
+		session.close();
+	}
+	
+}
 	
 	
 

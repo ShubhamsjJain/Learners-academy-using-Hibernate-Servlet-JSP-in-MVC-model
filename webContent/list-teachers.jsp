@@ -49,6 +49,7 @@ List<Teacher> teachers = (List<Teacher>)request.getAttribute("TEACHER_LIST");
               <th>Teacher E-Mail</th>
               <th>Teacher City</th>
               <th>Teacher Subjects</th>
+              <th>Classes assigned</th>
               <th>Action</th>
               
            </tr>

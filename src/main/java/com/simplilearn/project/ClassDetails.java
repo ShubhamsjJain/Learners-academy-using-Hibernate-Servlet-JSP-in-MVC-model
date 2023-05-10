@@ -31,6 +31,9 @@ public class ClassDetails {
 	@ManyToMany(mappedBy = "classes", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Subject> subjects = new ArrayList<>();
 
+	@ManyToMany(mappedBy = "classes", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Teacher> teachers = new ArrayList<>();
+	
 	public ClassDetails() {
 		
 	}

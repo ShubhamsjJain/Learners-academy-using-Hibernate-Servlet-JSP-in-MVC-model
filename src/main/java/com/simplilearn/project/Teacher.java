@@ -40,18 +40,32 @@ public class Teacher {
 			)
 	private List<Subject> s_objects = new ArrayList<>(); //List of all subjects object which are taught by this teacher
 
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(
+			name="teacher_class",
+			joinColumns = @JoinColumn(name="teacher_id"),
+			inverseJoinColumns = @JoinColumn(name="class_id")
+			)
+	private List<ClassDetails> classes = new ArrayList<>(); //List objects of all Class Entity in which this subject is assigned
+	
 	public Teacher() {
 		
 	}
 
-	public Teacher(int iD, String name, String e_mail, String city, List<Subject> s_objects) {
+	
+
+	public Teacher(int iD, String name, String e_mail, String city, List<Subject> s_objects,
+			List<ClassDetails> classes) {
 		super();
 		ID = iD;
 		this.name = name;
 		this.e_mail = e_mail;
 		City = city;
 		this.s_objects = s_objects;
+		this.classes = classes;
 	}
+
+
 
 	public int getID() {
 		return ID;
@@ -92,6 +106,19 @@ public class Teacher {
 	public void setS_objects(List<Subject> s_objects) {
 		this.s_objects = s_objects;
 	}
+
+
+
+	public List<ClassDetails> getClasses() {
+		return classes;
+	}
+
+
+
+	public void setClasses(List<ClassDetails> classes) {
+		this.classes = classes;
+	}
+	
 	
 	
 
