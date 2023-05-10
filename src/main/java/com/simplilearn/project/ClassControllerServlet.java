@@ -63,6 +63,13 @@ try {
 			    case "ADD":
 			
 			        //Add the students in MVC fashion 
+			    	
+			    case "ADDTEACHER":
+			    	
+					//Add teacher in class for a subject in MVC fashion
+		        	addTeacher(request,response);    //Provided below
+			        break;
+			    	
 			    
 			        
 			        
@@ -98,6 +105,19 @@ try {
 						
 			e.printStackTrace();
 		}  
+	}
+
+	private void addTeacher(HttpServletRequest request, HttpServletResponse response)throws Exception {
+		
+		String cla = request.getParameter("cla");
+		String teacher = request.getParameter("teacher");
+		
+		classdao.addTeacher(cla, teacher);
+		
+		classNames(request,response); 
+		
+		
+		
 	}
 
 	private void listClasses(HttpServletRequest request, HttpServletResponse response)throws Exception {

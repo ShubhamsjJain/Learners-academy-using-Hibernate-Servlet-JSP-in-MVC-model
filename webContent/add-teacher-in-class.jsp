@@ -30,7 +30,9 @@
       
          
          
-         <form action="" method="get">
+         <form action="classes" method="get">
+         
+         <input type="hidden" name="command" value="ADDTEACHER">
              
              <table>
              
